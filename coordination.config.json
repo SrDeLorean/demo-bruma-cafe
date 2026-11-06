@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "atlassian": { "site": "https://xebaelvemgador.atlassian.net" },
+  "jira": { "projectKey": null },
+  "confluence": {
+    "site": "https://xebaelvemgador-1793986210245.atlassian.net",
+    "mcpServer": "atlassian_confluence",
+    "spaceId": "196612",
+    "pageId": "458753"
+  },
+  "github": {
+    "owner": "SrDeLorean",
+    "repositories": ["SrDeLorean/demo-bruma-cafe"],
+    "projectNumber": null
+  },
+  "ownership": {
+    "t3": "conversation-and-orchestration",
+    "jira": "stories-goals-acceptance-and-business-status",
+    "confluence": "analysis-design-plan-decisions-and-document-versions",
+    "github": "code-pull-requests-and-checks",
+    "githubProjects": "technical-view-of-pull-requests-and-technical-issues"
+  },
+  "correctionPolicy": {
+    "mode": "prepare-and-wait-for-user-order",
+    "userOrderMustReference": ["scope", "documentVersion"],
+    "onFailure": "revise-analysis-design-plan-and-wait"
+  },
+  "context": {
+    "status": "context-only",
+    "documentVersion": "0.1",
+    "initialConfluencePageVersion": 1,
+    "implementationAuthorized": false,
+    "backlogStatus": "proposed-stories-in-confluence"
+  }
+}

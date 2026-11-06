@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.astro/
+.env
+.env.*
+!.env.example
+*.log
+.local-secrets/
+private/
+.DS_Store
+Thumbs.db

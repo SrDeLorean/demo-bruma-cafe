@@ -1,0 +1,9 @@
+[mcp_servers.github]
+command = "node"
+args = ["../pulpo/src/github-mcp.mjs"]
+
+[mcp_servers.atlassian]
+url = "https://mcp.atlassian.com/v2/mcp"
+
+[mcp_servers.atlassian_confluence]
+url = "https://mcp.atlassian.com/v2/mcp"
