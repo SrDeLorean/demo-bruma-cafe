@@ -1,8 +1,8 @@
 import { defineConfig } from '@playwright/test';
 import { resolve } from 'node:path';
 
-// Local al proyecto: tanto la instalación como los tests usan esta carpeta ignorada.
-process.env.PLAYWRIGHT_BROWSERS_PATH = resolve('.astro/chromium');
+// Por defecto, carpeta local ignorada; respeta PLAYWRIGHT_BROWSERS_PATH si contiene un valor no vacío.
+process.env.PLAYWRIGHT_BROWSERS_PATH ||= resolve('.astro/chromium');
 
 export default defineConfig({
   testDir: './tests/e2e',
