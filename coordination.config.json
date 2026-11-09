@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "atlassian": { "site": "https://xebaelvemgador.atlassian.net" },
-  "jira": { "projectKey": null },
+  "jira": { "projectKey": "DBC" },
   "confluence": {
     "site": "https://xebaelvemgador-1793986210245.atlassian.net",
     "mcpServer": "atlassian_confluence",

@@ -2,7 +2,34 @@
 
 Proyecto propio de portafolio: una web para una **cafetería ficticia**. No representa un cliente ni un negocio real.
 
-**Estado: repositorio y contexto inicial preparados. La aplicación todavía no está construida.** Este encargo no incluye instalar dependencias, generar una aplicación, ejecutar pruebas funcionales ni desplegarla.
+**Estado: DBC-1 (HU-01), portada estática local.** Incluye propuesta ficticia, aviso de demo y acceso a una carta pendiente de DBC-2. Sin despliegue. Las secciones de contexto siguientes conservan el resumen inicial; el estado ejecutable de este incremento se describe aquí.
+
+## Cómo ejecutar DBC-1
+
+Requiere Node.js 24.20.0 o superior y npm (verificado con 11.19.0). Astro y las herramientas usan versiones exactas en `package.json` y `package-lock.json`.
+
+```powershell
+# Variables solo para esta sesión; cachés y navegador dentro del proyecto.
+$env:ASTRO_TELEMETRY_DISABLED = '1'
+$env:npm_config_cache = Join-Path $PWD '.astro/npm-cache'
+$env:PLAYWRIGHT_BROWSERS_PATH = Join-Path $PWD '.astro/chromium'
+npm ci
+npx playwright install chromium
+npm run dev
+```
+
+Abrir la URL local indicada por Astro. Para verificar el mismo build estático:
+
+```powershell
+npm run check
+npm run build
+npm test
+npm run test:e2e
+```
+
+Vitest lee `dist/`. Playwright arranca `astro preview` en `127.0.0.1:4321`, lo cierra al terminar y requiere ese puerto libre. No reconstruye el sitio: ejecutar `build` antes de ambas suites. Comprueba 360×640 y 1280×800, con y sin JavaScript, teclado y axe; los contextos sin JS omiten únicamente la inyección de axe. Los resultados y capturas quedan en `test-results/` (ignorado). El umbral automatizado de axe es cero violaciones serious/critical; no sustituye una revisión completa de accesibilidad.
+
+La salida publicable queda en `dist/`, ignorada por Git. Este incremento no distribuye JavaScript de cliente, fotografías, productos ni precios; `#carta` explica el pendiente de DBC-2. No incluye CI ni despliegue.
 
 ## Contexto vigente
 
